@@ -1,57 +1,51 @@
 #include <stdio.h>
 
-int digitos( int n){
-    int digitos = 0;
-    while(n > 10){
-        n /= 10;
-        digitos += 1;
-    }digitos += 1;
-    return digitos;
-}
-
-int digito(int n){
-    int digito;
-    if(n > 10){
-        digito = n % 10;
-    }else{
-        digito = n;
+int digitos(int n1){
+    int numeros[5000];
+    int temRepeticao = 0;
+    int i = 0;
+    while(n1 >= 10){
+        numeros[i] = n1 % 10;
+        n1 /= 10;
+        i++; 
     }
-    return digito;
+    numeros[i] = n1;
 
-}
+    for(int j=0;j<i+1;j++){
+        for(int k=0;k<i+1;k++){
+            if(numeros[j] == numeros[k] && k != j){
+                temRepeticao = 1;
+                break;
+            }
+        }
+        if(temRepeticao == 1){
+            break;
+        }
+    }
+    if(temRepeticao == 1){
+        return 1;
+    }else{
+        return 0;
+    }
 
+} 
 
 int main(){
-    int numeros[5000];
-    int numero1 = 87;
-    int numero2 = 104;
-    int diferentes = 0;
-
-    
-
-    while(numero1 < numero2){
-
-        int nDigitos = digitos(numero1);
-
-        for(int i=0;i<nDigitos;i++){
-           
-            if(numero1 < 10){
-                 numeros[digitos(numero1)] = digito(numero1);
-                 break;
-            }else {
-                 numeros[digitos(numero1)] = digito(numero1);
-                 numero1 /= 10;
-            }
+    int n1;
+    int n2;
+    int repeticoes;
+    while (scanf("%i %i", &n1, &n2) == 2) {
+    repeticoes = 0;
+    int a = n1;
+    while(a <= n2){
+        if(digitos(a)==0){
+            repeticoes++;
+            a++;
+        }else{
+            a++;
         }
-        for(int i=0;i<nDigitos - 1;i++){
-            for(int j=1;j<nDigitos;j++){
-                if(numeros[i] != numeros[j]){
-                    diferentes++;
-                }
-            }
-        }
-        numero1 = numero1 + 1;
     }
-    printf("%i", diferentes);
-
+    printf("%i\n", repeticoes);
+}
+return 0;
 }
