@@ -1,35 +1,33 @@
 #include <stdio.h>
 
-long long sequenciaThibonacci(int n){
-    long long termoAnterior = 13;
-    long long termoAnterior2 = 3;
-    long long termoAtual;
-    for(int i=0;i<n;i++){
-        termoAtual = termoAnterior + (termoAnterior2*termoAnterior2 - 1);
-        termoAnterior2 = termoAnterior;
-        termoAnterior = termoAtual;
+int tres(long long n){
+    while(n >0){
+        if(n%10 == 3){
+            return 1;
+        }else n /= 10;
     }
-    return termoAtual;
+    return 0;
 }
 
 int main(){
 
-    int primeiroT = 3;
-    int segundoT = 13;
-    int nTermo;
-
-
-    scanf("%i", &nTermo);
-    if(nTermo == 1){
-        printf("%i", 3);
-    }else if(nTermo == 2){
-        printf("%i", 13);
-    }else{
-        int resultado = nTermo - 2;
-        long long resultadoPrint = sequenciaThibonacci(resultado);
-        printf("%lld", resultadoPrint);
+    long long p1 = 1;
+    long long p2 = 2;
+    long long atual = 0;
+    int posicoes;
+    int n = 0;
+   while (scanf("%d", &posicoes) != EOF){
+    while(posicoes != n){
+       
+            atual = p1 + p2;
+            p1 = p2;
+            p2 = atual;
+             if(atual % 3 == 0 || tres(atual)==1){
+            n++;
+        }
+        
     }
-
-
+    printf("%lli\n", atual);
+}
     return 0;
 }
