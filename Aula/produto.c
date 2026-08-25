@@ -17,39 +17,44 @@ int main(){
     if(l1 != c2){
         puts("Numero de linhas e colunas invalido!");
     }else{
+        puts("Me diga os valores dos itens na linha: ");
         for(int i=0;i<l1;i++){
-            puts("Me diga os valores dos itens na linha: ");
-            int aux1;
-            scanf("%i", aux1);
-            matriz1[l1][c1] = aux1;
+           for(int j=0;j<c1;j++){
+               int aux1;
+               scanf("%i", &aux1);
+               matriz1[i][j] = aux1;
+           }
         }
 
+        puts("Me diga os valores dos itens na linha: ");
          for(int i=0;i<l2;i++){
-            puts("Me diga os valores dos itens na linha: ");
-            int aux2;
-            scanf("%i", aux2);
-            matriz1[l2][c2] = aux2;
+            for(int j=0;j<c2;j++){
+                int aux2;
+                scanf("%i", &aux2);
+                matriz2[i][j] = aux2;
+            }
         }
 
-        for(int i=0;i<l1;i++){
-            for(int j=0;j<c2;j++){
-                int somaL = 0;
+        for(int i=0;i<l2;i++){
+            for(int j=0;j<c1;j++){
+                int somaL = 1;
                 for(int k=0;k<c1;k++){
-                    somaL+=matriz1[i][k];
+                    somaL*=matriz1[i][k];
                 }
-                int somaC = 0;
+                int somaC = 1;
                 for(int l=0;l<l2;l++){
-                    somaC += matriz2[j][l];
+                    somaC *= matriz2[j][l];
                 }
                 matrizR[i][j] = somaL + somaC;
             }
         }
-    }
-
-    for(int i=0;i<l1;i++){
-        for(int j=0;j<c2;j++){
-            printf("%i ", matrizR[i][j]);
+        for(int i=0;i<l1;i++){
+            for(int j=0;j<c2;j++){
+                printf("%i ", matrizR[i][j]);
+            }
+            printf("\n");   
         }
+        
     }
 
 
