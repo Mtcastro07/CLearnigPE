@@ -1,1 +1,2 @@
-            printf("%i ", v[j]);
+
+    if(pow == 1){
