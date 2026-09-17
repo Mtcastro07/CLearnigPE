@@ -1,5 +1,0 @@
----
-triple:          'arm64-apple-darwin'
-binary-path:     '/Users/Matheus/Documents/CLearnigPE/Aula/90graus_asan'
-relocations:     []
-...
