@@ -1,0 +1,6 @@
+alexandre 45123789
+anderson 12345678
+carlos 98765432
+antonio 87654321
+cesar 23456789
+rosemary 34567890

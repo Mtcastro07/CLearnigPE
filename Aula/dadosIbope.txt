@@ -1,0 +1,15 @@
+Masculino 20.0 S
+Feminino 25.0 N
+Masculino 30.0 S
+Feminino 22.0 N
+Feminino 28.0 S
+Masculino 35.0 N
+Masculino 40.0 S
+Feminino 32.0 N
+Masculino 45.0 S
+Feminino 38.0 N
+Feminino 50.0 S
+Feminino 55.0 N
+Masculino 60.0 S
+Feminino 65.0 N
+Masculino 70.0 S
