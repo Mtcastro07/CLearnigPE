@@ -2,51 +2,32 @@
 #include <stdlib.h>
 #include <string.h>
 
-void dadosArquivo(char *arquivo) {
-  FILE *fe = fopen(arquivo, "r");
-  int idades[100];
-  char nomes[100][256];
-  char generos[100][256];
-  float pesos[100];
-  float alturas[100];
-  char escolaridades[100][256];
-  char olhos[100][256];
-  int i = 0;
-  int somaIdades = 0;
-  float somaAlturas = 0.0;
-  int mulheresVerdes = 0;
-  int pessoas = 0;
-  float pessoasf = 0;
+int forca(char *arquivo){
+    FILE *fe = fopen(arquivo, "r");
+    char palavras[100][255];
+    char palavra[255];
+    int i = 0;
 
-  while (fscanf(fe, "%s %s %f %f %i %s %s", nomes[i], generos[i], &alturas[i],
-                &pesos[i], &idades[i], olhos[i], escolaridades[i]) == 7) {
-    if (olhos[i][0] == 118 && idades[i] > 50 && generos[i][0] == 102) {
-      mulheresVerdes++;
+    while(fscanf(fe,"%s",palavra) == 1){
+        strcpy(palavras[i],palavra);
+        i++;
     }
-    somaIdades += idades[i];
-    somaAlturas += alturas[i];
-    pessoas++;
-    pessoasf++;
-  }
-
-  int mediaIdades = somaIdades / pessoas;
-  float mediaAlturas = somaAlturas / pessoasf;
-  int maisVelhas = 0;
-
-  for (int i = 0; i < pessoas; i++) {
-    if (idades[i] > mediaIdades) {
-      maisVelhas++;
+    for(int i=0;i<6;i++){
+        char advinha[255];
+        scanf("%s", advinha);
+        getchar();
+        for(int j=0;j<i+1;j++){
+            if(strcmp(advinha,palavras[j])==0){
+                return 1;
+            }
+        }
     }
-  }
-  int porcentagemPessoas = (100 * maisVelhas) / pessoas;
-  printf("A media das idades: %i, e alturas: %f, há %i porcento de pessoas com idade "
-         "maior que media e %i mulheres respeitando as condicoes.",
-         mediaIdades, mediaAlturas, porcentagemPessoas, mulheresVerdes);
-
-  fclose(fe);
+    return -1;
 }
 
-int main() {
-  char *arquivo = "dados.txt";
-  dadosArquivo(arquivo);
+int main(){
+    char *arquivo = "palavras.txt";
+    int result = forca(arquivo);
+    printf("%i", result);
 }
+
