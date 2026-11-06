@@ -50,4 +50,3 @@ int main() {
   char *arquivo_entrada = "temps.txt";
   temps(arquivo_entrada, arquivo_saida);
 }
-gi
