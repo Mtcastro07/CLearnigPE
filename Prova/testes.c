@@ -3,6 +3,15 @@
 #include <stdlib.h>
 #include <string.h>
 
+void inverter_string(char s1[]) {
+  int len = strlen(s1);
+  for (int i = 0; i < len / 2; i++) {
+    char troca = s1[i];
+    s1[i] = s1[len - i - 1];
+    s1[len - i - 1] = troca;
+  }
+}
+
 void mesma_palavra(char *palavra1, char *palavra2, int *result) {
   int len1 = strlen(palavra1);
   int len2 = strlen(palavra2);
@@ -17,12 +26,6 @@ void mesma_palavra(char *palavra1, char *palavra2, int *result) {
     }
   }
 }
-
-void funct(char *algo){
-    int len = strlen(algo);
-    static 
-}
-
 
 void mesma_palavras(char *arquivo) {
   FILE *fe = fopen(arquivo, "r");
@@ -77,7 +80,7 @@ void mesma_palavras(char *arquivo) {
   printf(
       "A palavra que mais se repete seria %s, com o total de %i ocorrencias\n",
       palavraR, maiorR);
-  for (int i = 0; i < indice; i++) {
+  for (int i = 0; i <= indice; i++) {
     free(palavras[i]);
   }
   free(palavras);
@@ -91,3 +94,4 @@ int main() {
   char *arquivo = "frases.txt";
   mesma_palavras(arquivo);
 }
+

@@ -30,3 +30,4 @@ int main(){
     int result = forca(arquivo);
     printf("%i", result);
 }
+

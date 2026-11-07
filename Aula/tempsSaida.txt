@@ -1,0 +1,5 @@
+A menor temperatura ocorrida: 15.600000
+A maior temperatura ocorrida: 39.599998
+A temperatura media: 27.842014
+Numero de dias nos quais a temperatura foi inferior a temperatura media: 57.000000
+Numero de dias nos quais a temperatura foi superior a temperatura media: 62.000000

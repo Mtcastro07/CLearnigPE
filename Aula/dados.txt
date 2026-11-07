@@ -1,0 +1,5 @@
+matheus masculino 1.67 65.0 19 castanhos medio
+rodrigo masculino 1.75 80.0 25 azuis escuro
+carla feminino 1.60 55.0 30 vedes claro
+antonela feminino 1.70 70.0 28 azuis escuro
+paiva masculino 1.80 90.0 35 verdes escuro

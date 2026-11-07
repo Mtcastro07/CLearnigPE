@@ -1,0 +1,9 @@
+ACME Inc.       Uso do espaco em disco pelos usuarios
+-----------------------------------------------------
+Nr. Usuario     Espaco utilizado        porcentagem de uso
+1 alexandre      43.03 MB       14.95 porcento
+2 anderson      11.77 MB       4.09 porcento
+3 carlos      94.19 MB       32.71 porcento
+4 antonio      83.60 MB       29.03 porcento
+5 cesar      22.37 MB       7.77 porcento
+6 rosemary      32.97 MB       11.45 porcento

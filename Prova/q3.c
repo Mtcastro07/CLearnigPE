@@ -18,6 +18,6 @@ int fibonacci(int n) {
 
 int main() {
   int n = 0;
-  int result = fibonacci(6);
+  int result = fibonacci(6); 
   printf("%i\n", result);
 }
